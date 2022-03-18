@@ -1,0 +1,21 @@
+{
+  "name": "apetracker",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.3.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@uniswap/sdk": "^3.0.3",
+    "ethers": "^5.5.4"
+  }
+}

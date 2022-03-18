@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Ape Tracker</title>
+      <!--  Libraries-->
+      <script src="https://kit.fontawesome.com/700a2ad799.js" crossorigin="anonymous"></script>
+      <!-- custom JS ad css -->
+      <link href="./css/pretty-please.css" rel="stylesheet" />
+      <link href="./css/index.css" rel="stylesheet" />
+      <link href="./css/loading.css" rel="stylesheet" />
+      <link href="./css/modal.css" rel="stylesheet" />
+      <script src="./js/ape.js" type="module"></script>
+      <script src="./js/loading.js"></script>
+      <script src="./js/modal.js"></script>
+   </head>
+   <body id="body">
+      <div id = "main" class="pretty center container">
+         <div class="pretty left contianer">
+            <h2>Ape Information System</h2>
+         </div>
+         <hr id="rule" />
+         <br />
+         <div class="pretty center fluid container">
+            <label for="ape-number" class="pretty big text"> ape #</label>
+            <input
+               id="ape-id-input"
+               class="pretty input"
+               type="number"
+               name="ape-number"
+               />
+         </div>
+         <br />
+         <image id="ape-image" class="pretty inline medium image"></image>
+         <br />
+         <div id="info-box" class="pretty left container small text">
+            <div> Owner: <span id="ape-owner"></span></div>
+            <div> Genesis Ape? <span id ="ape-genesis"></span></div>
+            <div> Governance? <span id ="ape-governance"></span></div>
+            <div> Monkey's Rarity Rank: #<span id ="ape-rarity-rank">Coming Soon!</span><button id="info-button" class="pretty icon circular button" onclick="modal()"><i class="fa-solid fa-circle-info"></i></button></div>
+            <div> Monkey's Rarity Score: <span id ="ape-rarity-score">Coming Soon!</span></div>
+            <div> $VARIABLE: <span id="ape-variable"></span></div>
+            <div> $VARIABLE (1 $VAR = <span id="variable-to-weth"></span> WETH) in WETH: <span id="ape-variable-weth"></span></div>
+            <div> $VARIABLE (1 $VAR = $<span id="variable-to-usd"></span> USD) in USD: $<span id="ape-variable-usd"></span></div>
+            <br>
+            <div> Ape Traits: </div>
+            <div id = "ape-attributes" class="pretty left container text">
+               Coming Soon!
+            </div>
+         </div>
+         <br/>
+         <br/>
+         <div id="pay-me">
+            <div class="pretty text small">made with ❤️ by a 🐒</div>
+            <div class="pretty text small">if you like it and have some spare change, buy me a coffee</div>
+            <div class="pretty text small">0x1B89d5617f698942a2Fd894d00e5104aA10eAdED</div>
+         </div>
+      </div>
+
+      <!--Loading Tmeplates-->
+      <div id='loading' style="display: none;">
+         <div class="loading-effects">
+         </div>
+      </div>
+      <template id="loading-template" style="display: none;">
+         <div class="loading-content">
+            <div class="lds-roller">
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+            </div>
+         </div>
+      </template>
+
+      <!--Modal Tmeplates-->
+      <div id='modal' style="display: none;">
+         <div class="modal-effects">
+         </div>
+      </div>
+      <template id="modal-template" style="display: none;">
+         <div class="modal-content" ">
+            <h3>How is Rarity Calculated?</h3>
+            <div>
+               <hr>
+            </div>
+            <button id="close-modal" class="close button" onclick="close_modal()"><i class="fas fa-times"></i></button>
+            <div style="text-align: left;">
+               <ol>
+                  <li>
+                     The data was fetched from the contract, and cleaned up, traits were listed under several names those were fixed, hence the difference from the properties on opensea. 
+                  </li>
+                  <li>
+                     For trait an ape has a rarity score is calculated using formula:
+                     <br/><br/>
+                     1 / ([How many Apes have the trait]/ [Total Number of Apes])
+                     <br/><br/>
+                  </li>
+                  <li>
+                     The score is for each trait is added together to determine the rarity score for the ape has a whole 
+                  </li>
+                  <li>
+                     The apes are then ranked by their rarity score highest score is considered the rarest ape 
+                  </li>
+               </ol>
+               <h4>Links/Important Info: </h4>
+               <ol>
+                  <li>
+                     The formula for this method came from a medium article by the founder of rarity.tools (https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c)
+                  </li>
+                  <li>
+                     The entire list of ranked apes can be found here (https://apeprojectinfo.xyz/rank-list.txt)
+                  </li>
+                  <li>
+                     The list of all possible traits and their percentage occurrences can be found here (https://apeprojectinfo.xyz/attribute-percentage-list.json) (you need to multiply the number by 100 to get a percent)
+                  </li>
+                  <li>
+                     The list of all possible traits and how many apes have them can be found here (https://apeprojectinfo.xyz/attribute-number-list.json)
+                  </li>
+               </ol>
+            </div>
+         </div>
+      </template>
+   </body>
+</html>

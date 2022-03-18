@@ -1,0 +1,62 @@
+#ape-number-input {
+  width: fit-content;
+}
+
+#ape-image {
+  margin: .25em;
+}
+
+#info-box {
+  width: 70%;
+}
+
+
+@media only screen and (max-width: 768px){
+
+  #info-box {
+    width: 100%;
+  }
+}
+
+#info-box > * {
+  margin: 0.5em;
+}
+
+#ape-attributes > * {
+  margin: 0.5em;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+
+#pay-me {
+  margin-top: auto;
+}
+
+#body {
+  min-height: 100vh;
+}
+
+#rule {
+  width: 70%;
+  border-style: inset;
+  border-width: 1px;
+  margin: 0.5em auto;
+}
+
+#info-button {
+  vertical-align: middle;
+  margin: 0; 
+  display: inline;
+  background-color: transparent;
+
+}
+
+#info-button > i {
+  line-height: unset;
+}
